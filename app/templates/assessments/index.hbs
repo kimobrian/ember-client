@@ -1,0 +1,11 @@
+<h4>Assessments Homepage</h4>
+<ul>
+  {{#each model as |assess|}}
+    <li>
+      {{#link-to 'assessments.assessment' assess.id}}
+        <p>{{assess.assessor}}</p>
+        <p>{{assess.fellow}}</p>
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
