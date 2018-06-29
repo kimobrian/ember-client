@@ -7,21 +7,21 @@ export default Route.extend({
       id: '1',
       assessor: 'Williams Adu',
       fellow: 'Brian Kimokoti',
-      score: 90,
+      score: 95,
       status: 'Pass'
     },
     {
       id: '2',
-      assessor: 'Williams Adu',
-      fellow: 'Brian Kimokoti',
-      score: 90,
+      assessor: 'Kiura Alex',
+      fellow: 'Kimani Ndegwa',
+      score: 93,
       status: 'Pass'
     },
     {
       id: '3',
-      assessor: 'Williams Adu',
-      fellow: 'Brian Kimokoti',
-      score: 90,
+      assessor: 'Sam Gaamuwa',
+      fellow: 'Godfrey Semwezi',
+      score: 95,
       status: 'Pass'
     }
   ])
