@@ -1,5 +1,9 @@
 # Assessment
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/8d8250dc751b35f14d9f/maintainability)](https://codeclimate.com/github/kimobrian/ember-client/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8d8250dc751b35f14d9f/test_coverage)](https://codeclimate.com/github/kimobrian/ember-client/test_coverage)
+[![Build Status](https://travis-ci.com/kimobrian/ember-client.svg?branch=master)](https://travis-ci.com/kimobrian/ember-client)
+
 Ember client app for https://github.com/kimobrian/server
 
 This README outlines the details of collaborating on this Ember application.

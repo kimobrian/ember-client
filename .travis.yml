@@ -33,3 +33,10 @@ script:
 after_script:
   # CodeClimate report coverage
   - ./cc-test-reporter after-build upload-coverage -t lcov
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  script: ember deploy --activate=true production
+  app:
+    master: assessm-client
