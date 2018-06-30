@@ -1,23 +1,10 @@
-<h5>Assessments List</h5>
+<h5>Fellow Assessments List</h5>
 <ul class="list-group list-group-flush">
   {{#each model as |assess|}}
       {{#link-to 'assessments.assessment' assess.id}}
       <li class="list-group-item">
         <div class='flex-row'>
-          <div class='flex-column-left'>Assessor</div>
-          <div class='flex-column-right'>{{assess.assessor}}</div>
-        </div>
-        <div class='flex-row'>
-          <div class='flex-column-left'>Fellow</div>
           <div class='flex-column-right'>{{assess.fellow}}</div>
-        </div>
-        <div class='flex-row'>
-          <div class='flex-column-left'>Score</div>
-          <div class='flex-column-right'>{{assess.score}}%</div>
-        </div>
-        <div class='flex-row'>
-          <div class='flex-column-left'>Status</div>
-          <div class='flex-column-right'>{{assess.status}}</div>
         </div>
       </li>
       {{/link-to}}
