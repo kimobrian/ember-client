@@ -1,11 +1,12 @@
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { expect } from 'chai';
+import { describe, it } from 'mocha';
+import { setupTest } from 'ember-mocha';
 
-module('Unit | Route | nuts', function(hooks) {
-  setupTest(hooks);
+describe('Unit | Route | nuts', function() {
+  setupTest('route:nuts');
 
-  test('it exists', function(assert) {
-    let route = this.owner.lookup('route:nuts');
-    assert.ok(route);
+  it('exists', function() {
+    let route = this.subject();
+    expect(route).to.be.ok;
   });
 });

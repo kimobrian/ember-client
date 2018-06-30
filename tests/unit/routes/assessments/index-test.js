@@ -1,11 +1,16 @@
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { expect } from 'chai';
+import { describe, it } from 'mocha';
+import { setupTest } from 'ember-mocha';
+import sinon from 'sinon';
 
-module('Unit | Route | assessments/index', function(hooks) {
-  setupTest(hooks);
+describe('Unit | Route | assessments/index', function() {
+  setupTest('route:assessments/index');
 
-  test('it exists', function(assert) {
-    let route = this.owner.lookup('route:assessments/index');
-    assert.ok(route);
+  it('calls store.findAll in the model hook', async function() {
+    let route = this.subject();
+    let mockStore = { findAll: sinon.spy() }
+    route.set('store', mockStore);
+    await route.model();
+    expect(route.get('store.findAll').called).to.equal(true);
   });
 });

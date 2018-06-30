@@ -1,11 +1,23 @@
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { expect } from 'chai';
+import { describe, it } from 'mocha';
+import { setupTest } from 'ember-mocha';
+import sinon from 'sinon';
 
-module('Unit | Route | application', function(hooks) {
-  setupTest(hooks);
+describe('Unit | Route | application', function() {
+  setupTest('route:application', {
+    needs:['router:main']
+  });
 
-  test('it exists', function(assert) {
-    let route = this.owner.lookup('route:application');
-    assert.ok(route);
+  it('calls replaceWith in the beforeModel hook', async function() {
+    let route = this.subject();
+    route.set('replaceWith', sinon.spy())
+    await route.beforeModel();
+    expect(route.replaceWith.args).to.eql([
+      [
+        "assessments"
+      ]
+    ]);
   });
 });
+
+

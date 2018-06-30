@@ -6,6 +6,7 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
+/* istanbul ignore next */
 Router.map(function() {
   this.route('assessments', function(){
     this.route('assessment', {'path': '/:assessment_id'});
