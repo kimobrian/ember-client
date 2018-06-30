@@ -3,10 +3,8 @@ import { describe, it } from 'mocha';
 import { setupTest } from 'ember-mocha';
 import sinon from 'sinon';
 
-describe('Unit | Route | application', function() {
-  setupTest('route:application', {
-    needs:['router:main']
-  });
+describe('Unit | Route | index', function() {
+  setupTest('route:index');
 
   it('calls replaceWith in the beforeModel hook', async function() {
     let route = this.subject();

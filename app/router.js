@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('assessment', {'path': '/:assessment_id'});
   });
   this.route('nuts');
+  this.route('page-not-found', { path: '*'});
 });
 
 export default Router;
