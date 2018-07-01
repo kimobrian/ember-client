@@ -1,0 +1,13 @@
+<h5>Fellow Assessments List</h5>
+<ul class="list-group list-group-flush">
+  {{#each model as |assess|}}
+      {{#link-to 'assessments.assessment' assess.id}}
+      <li class="list-group-item">
+        <div class='flex-row'>
+          <div class='flex-column-right'>{{assess.fellow}}</div>
+        </div>
+      </li>
+      {{/link-to}}
+  {{/each}}
+</ul>
+{{new-assessment}}
