@@ -1,11 +1,22 @@
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { expect } from 'chai';
+import { describe, it } from 'mocha';
+import { setupTest } from 'ember-mocha';
+import sinon from 'sinon';
 
-module('Unit | Route | assessments/assessment', function(hooks) {
-  setupTest(hooks);
+describe('Unit | Route | assessments/assessment', function() {
+  setupTest('route:assessments/assessment');
 
-  test('it exists', function(assert) {
-    let route = this.owner.lookup('route:assessments/assessment');
-    assert.ok(route);
+  it('calls store.findRecord in the model hook', async function() {
+    let route = this.subject();
+    let mockStore = { findRecord: sinon.spy() }
+    route.set('store', mockStore);
+    await route.model({ assessment_id: 'Test-ID' });
+    expect(route.get('store.findRecord').called).to.equal(true);
+    expect(route.get('store.findRecord').args).to.eql([
+      [
+        "assessment",
+        "Test-ID"
+      ]
+    ]);
   });
 });
