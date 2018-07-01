@@ -1,0 +1,45 @@
+
+<div class="card">
+  <div class="card-title new-form"><h4>Create New Assessment Record</h4></div>
+  <div class="card-text new-form">
+    <div class="row">
+      <div class="col-md-6">
+        {{#if error}}
+          <div class="alert alert-danger">
+            {{error}}
+          </div>
+        {{/if}}
+        {{#if success}}
+          <div class="alert alert-success">
+            {{success}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        {{input class='form-control' value=fellow placeholder='Fellow Name' }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        {{input class='form-control' value=assessor placeholder='Assessor Name' }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        {{input class='form-control' type='number' value=score placeholder='Score' }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        {{input class='form-control' value=status placeholder='Status' }}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button {{action "createRecord"}} type="button" class="btn btn-primary">Create Record</button>
+      </div>
+    </div>
+  </div>
+</div>
